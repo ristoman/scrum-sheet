@@ -1,0 +1,28 @@
+<template name="report">
+	<div id="MySplitters">
+   <div class="span6 lpane">{{>report_procedure current_procedure}}</div>
+   <div class="span6 rpane"> 
+	<p><strong>Report: {{report.who}}</strong></p>
+	<p><strong>Working On</strong></p>
+	<p>{{report.working_on}}</p>
+
+
+	</div>
+ </div>
+</template>
+
+
+<template name="create_report">
+	{{>insertReportForm}}
+</template>
+
+<template name="edit_report">
+	{{>editReportForm}}
+</template>
+
+<template name="delete_report">
+	<div>
+	{{>deleteReportForm report}}
+	</div>
+
+</template>

@@ -1,0 +1,75 @@
+/* CSS declarations go here */
+/* CSS declarations go here */
+
+
+#MySplitter {
+	height: 400px;
+	width: 100%;
+	border: 5px solid #aaa;
+}
+#MySplitter div {
+	overflow: auto;
+}
+.vsplitbar {
+	width: 5px;
+	background: #aaa;
+}
+
+.rpane {
+	border: solid;
+	height: 100%;
+}
+
+.lpane {
+	border: solid;
+	height: 100%;	
+}
+
+.sorted_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sorted_list li.header div {
+	background-color: #ccc;
+	font-weight: bold;
+	cursor: default;
+}
+
+.sorted_list li div {
+	display: block;
+	float: left;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	padding: 3px 5px;
+}
+
+.sorted_list li div.listitem_who {
+	width: 20%;
+	border-left: 1px solid #ccc;
+}
+.sorted_list li div.listitem_working_on {
+	width: 50%;
+	border-left: 1px solid #ccc;
+}
+
+.sorted_list li div.listitem_when {
+	width: 70%;
+	border-left: 1px solid #ccc;
+}
+
+.sorted_list li div.listitem_blockers {
+	width: 60%;
+	border-left: 1px solid #ccc;
+}
+
+.sorted_list li div.listitem_icon {
+	width: 10%
+	border-left: 1px solid #ccc;
+}
+
+
+.right-btn {
+	float: right;
+}

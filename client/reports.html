@@ -1,0 +1,85 @@
+<template name="reports">
+ <h1> Reports</h1>
+ <div>
+	<a href="/reports/create" type="button" class="btn btn-primary">New Report</a>
+ <div>
+ <div>
+     <table border=1>
+         <tr>
+             <th>When</th>
+             <th>Who</th>
+             <th>Working On</th>
+             <th>Blockers</th>
+         </tr>
+         {{#each team_members}}
+         
+            <tr>
+                <td>{{ when}}</td>
+                <td>{{ who}}</td>
+                {{#with todays_report this}}
+                <td><pre>{{ working_on}}</pre></td>
+                <td><pre>{{blockers}}</pre></td> 
+                {{#if isme }}         
+                <td><a href="/report/{{_id}}/edit">Edit</a></td>
+                {{/if}}
+                {{/with}}
+            </tr>
+        
+         {{/each}}   
+     </table>
+
+
+
+
+
+</template>
+
+
+<template name="reportForm">
+	<fieldset>
+        <legend>New Report</legend>
+        <div class="form-group{{#if afFieldIsInvalid 'when'}} has-error{{/if}}">
+            {{afFieldLabel 'when'}}
+            {{afFieldInput 'when' }}
+            {{#if afFieldIsInvalid 'when'}}
+            <span class="help-block">{{afFieldMessage 'when' }}</span>
+            {{/if}}
+        </div>
+
+        <div class="form-group{{#if afFieldIsInvalid 'working_on'}} has-error{{/if}}">
+            {{afFieldLabel 'working_on'}}
+            {{afFieldInput 'working_on' rows =  "10"}}
+            {{#if afFieldIsInvalid 'working_on'}}
+            <span class="help-block">{{afFieldMessage 'working_on'}}</span>
+            {{/if}}
+        </div>
+        <div class="form-group{{#if afFieldIsInvalid 'blockers'}} has-error{{/if}}">
+            {{afFieldLabel 'blockers'}}
+            {{afFieldInput 'blockers' rows =  "10"}}
+            {{#if afFieldIsInvalid 'blockers'}}
+            <span class="help-block">{{afFieldMessage 'blockers'}}</span>
+            {{/if}}
+        </div>
+
+    </fieldset>
+</template>
+
+<template name="insertReportForm">
+    {{#autoForm schema=ReportsForm}}
+	{{>reportForm}}
+    <button type="submit" class="btn btn-primary insert">Create</button>
+    {{/autoForm}}
+</template>
+
+<template name="editReportForm">
+    {{#autoForm schema=ReportsForm doc=selectedReport}}
+	{{>reportForm}}
+    <button type="submit" class="btn btn-primary update">OK</button>
+    {{/autoForm}}
+</template>
+
+<template name="deleteReportForm">
+	{{#autoForm schema=ReportsForm doc=this}}
+	  <button type="submit" class="btn btn-primary remove">Delete</button>
+	{{/autoForm}}
+</template>
