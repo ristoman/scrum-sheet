@@ -21,3 +21,19 @@ Meteor.Router.add({
 	}
  		
 });
+
+
+Meteor.Router.filters({
+    'checkLoggedIn': function(page) {
+        if (Meteor.loggingIn()) {
+            return 'loading';
+        } else if (Meteor.user()) {
+            return page;
+        } else {
+            return 'signin';
+        }
+    }
+});
+
+// applies to all pages
+Meteor.Router.filter('checkLoggedIn');
