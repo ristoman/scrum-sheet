@@ -20,7 +20,7 @@ Reports = new Meteor.Collection2("reports", {
 		blockers: {
 			type: String,
 			label: "Blockers",
-			max: 100
+			max: 1000
 		}
 	}
 });
