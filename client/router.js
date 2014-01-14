@@ -18,6 +18,11 @@ Meteor.Router.add({
 	'/report/:id/delete': function(id) {
 		Session.set("currentReportId", id);
 		return 'delete_report';
+	},	
+	'/userhistory/:id': function(id) {
+		Session.set('userHistoryId', id);
+		console.log("history");
+		return 'user_history';
 	}
  		
 });

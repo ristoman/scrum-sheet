@@ -1,0 +1,19 @@
+
+<template name="user_history">
+
+    <table>
+        <tr>
+            <th>When</th>
+            <th>Working On</th>
+            <th>Blockers</th>
+        </tr>
+            {{#each reports}}
+            <tr>
+                <td>{{when}}</td>
+                <td><pre>{{working_on}}</pre></td>
+                <td><pre>{{blockers}}</pre></td>
+            </tr>
+            {{/each}}
+        </tr>
+    </table>
+</template>

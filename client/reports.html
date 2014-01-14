@@ -8,6 +8,7 @@
          <tr>
              <th>When</th>
              <th>Who</th>
+             <th>History</th>
              <th>Working On</th>
              <th>Blockers</th>
          </tr>
@@ -16,6 +17,7 @@
             <tr>
                 <td>{{ when}}</td>
                 <td>{{ who}}</td>
+                <td><a href="/userhistory/{{_id}}">History</a></td>
                 {{#with todays_report this}}
                 <td><pre>{{ working_on}}</pre></td>
                 <td><pre>{{blockers}}</pre></td> 
@@ -40,7 +42,7 @@
         <legend>New Report</legend>
         <div class="form-group{{#if afFieldIsInvalid 'when'}} has-error{{/if}}">
             {{afFieldLabel 'when'}}
-            {{afFieldInput 'when' }}
+            {{afFieldInput 'when' value=today }}
             {{#if afFieldIsInvalid 'when'}}
             <span class="help-block">{{afFieldMessage 'when' }}</span>
             {{/if}}

@@ -34,6 +34,26 @@ Template.report.helpers({
   },
 });
 
+
+Template.reportForm.today = function() {
+  return dateToDateString(new Date);
+
+  // or use moment to avoid custom function
+  // return moment().format("YYYY-MM-DD");
+};
+
+var dateToDateString = function(date) {
+  var m = (date.getMonth() + 1);
+  if (m < 10) {
+    m = "0" + m;
+  }
+  var d = date.getDate();
+  if (d < 10) {
+    d = "0" + d;
+  }
+  return date.getFullYear() + '-' + m + '-' + d;
+};
+
 Template.reports.helpers({
 	team_members: function() {
 		return  Meteor.users.find({}).fetch();
