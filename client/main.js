@@ -35,6 +35,7 @@ Meteor.startup(function(){
 });
 
 ReportsForm = new AutoForm(Reports);
+UsersForm = new AutoForm(UserSchema);
 
 Accounts.ui.config({
 

@@ -12,6 +12,7 @@ router
 bootstrap-3
 simple-schema
 accounts-ui
-accounts-google
 accounts-password
 moment
+accounts-admin-ui
+roles

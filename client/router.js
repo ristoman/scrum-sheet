@@ -23,6 +23,10 @@ Meteor.Router.add({
 		Session.set('userHistoryId', id);
 		console.log("history");
 		return 'user_history';
+	},
+	'/remind/:id': function(id) {
+		Session.set('userRemindId', id);
+		return 'remind';
 	}
  		
 });

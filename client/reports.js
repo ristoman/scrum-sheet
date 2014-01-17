@@ -56,9 +56,9 @@ var dateToDateString = function(date) {
 
 Template.reports.helpers({
 	team_members: function() {
-		return  Meteor.users.find({}).fetch();
+		return  Meteor.users.find({}, {sort: {username: 1}}).fetch();
 	},
-	
+
 	todays_report: function(who){
 		var w = who.username;
 		console.log(Reports.find({}).fetch());
@@ -76,8 +76,30 @@ Template.reports.helpers({
 	},
 	isme: function() {
 		return(Meteor.user().username == this.who);
+	},
+	administrator: function() {
+		console.log("admin?");
+		if (Roles.userIsInRole(Meteor.user(), ['admin','user-admin'])) {
+			return true;
+		} else {
+				return false;
+		}
+	
 	}
 });
+
+Template.reports.events(
+	{
+	  // Fires when any element with the 'accept' class is clicked
+	  'click .remind': function (event) {
+			console.log("EV:" ,event, this);
+			Meteor.call('sendEmail',
+			             this.emails[0],
+			             'no-reply@upptalk.com',
+			             'Daily Report Reminder',
+			            'Please submit a daily status report now');
+		}
+	});
 
 Template.editReportForm.selectedReport = function() {
 	var r =  Reports.findOne({_id: Session.get("currentReportId")});

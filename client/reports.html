@@ -8,6 +8,9 @@
          <tr>
              <th>When</th>
              <th>Who</th>
+             {{#if administrator}}
+             <th>Remind</th>
+             {{/if}}
              <th>History</th>
              <th>Working On</th>
              <th>Blockers</th>
@@ -17,6 +20,9 @@
             <tr>
                 <td>{{ when}}</td>
                 <td>{{ who}}</td>
+                {{#if administrator}}
+                <td><button class="btn remind" href="/remind/{{_id}}">Remind</button></td>
+                {{/if}}
                 <td><a href="/userhistory/{{_id}}">History</a></td>
                 {{#with todays_report this}}
                 <td><pre>{{ working_on}}</pre></td>
