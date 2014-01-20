@@ -94,8 +94,8 @@ Template.reports.events(
 	  'click .remind': function (event) {
 			console.log("EV:" ,event, this);
 			Meteor.call('sendEmail',
-			             this.emails[0],
-			             'no-reply@upptalk.com',
+			             this.emails[0].address,
+			             'mike@minus1.com',
 			             'Daily Report Reminder',
 			            'Please submit a daily status report now');
 		}
