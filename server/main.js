@@ -13,6 +13,10 @@ Meteor.startup(function () {
 	console.log("Started");
 	
 	createUserAdminRoles();
+	
+	process.env.MAIL_URL = 'smtp://@gilbert.karliner.org:25';
+	
+	console.log(Meteor.settings);
  });
 
 Accounts.config({ restrictCreationByEmailDomain: 'upptalk.com', sendVerificationEmail: true });
