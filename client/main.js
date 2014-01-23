@@ -37,6 +37,16 @@ Meteor.startup(function(){
 ReportsForm = new AutoForm(Reports);
 UsersForm = new AutoForm(UserSchema);
 
+UsersForm.hooks ({
+
+	onSubmit: function(result, set, record) {
+		console.log("US: ", result, set, record);
+		// Meteor.users.update({_id: record._id}, {$set: {profile: new Object() }})
+		Meteor.users.update({_id: record._id},  {$set: {"profile.team": result.profile.team, "profile.authorised": result.profile.authorised, username: result.username, "emails.0.address": result.email }});
+		Meteor.Router.to("/");
+	}
+});
+
 Accounts.ui.config({
 
   passwordSignupFields: 'USERNAME_AND_EMAIL'

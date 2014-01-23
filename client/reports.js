@@ -56,7 +56,12 @@ var dateToDateString = function(date) {
 
 Template.reports.helpers({
 	team_members: function() {
-		return  Meteor.users.find({}, {sort: {username: 1}}).fetch();
+		var team = Session.get("selectedTeam");
+		if(team == 'All') {
+			return Meteor.users.find({}, {sort: {username: 1}}).fetch();
+		} else {
+			return  Meteor.users.find({"profile.team": team}, {sort: {username: 1}}).fetch();
+		}
 	},
 
 	todays_report: function(who){

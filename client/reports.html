@@ -11,6 +11,8 @@
              {{#if administrator}}
              <th>Remind</th>
              {{/if}}
+              <th>Team</th>
+             <th>Email</th>
              <th>History</th>
              <th>Working On</th>
              <th>Blockers</th>
@@ -19,10 +21,14 @@
          
             <tr>
                 <td>{{ when}}</td>
-                <td>{{ who}}</td>
                 {{#if administrator}}
+                <td><a href="/profile/{{_id}}">{{who}}</a></td>
                 <td><button class="btn remind" href="/remind/{{_id}}">Remind</button></td>
+                {{ else }}
+                <td>{{ who}}</td>
                 {{/if}}
+                <td>{{ profile.team }}</td>
+                <td>{{ emails.0.address }}</td>
                 <td><a href="/userhistory/{{_id}}">History</a></td>
                 {{#with todays_report this}}
                 <td><pre>{{ working_on}}</pre></td>
@@ -31,6 +37,7 @@
                 <td><a href="/report/{{_id}}/edit">Edit</a></td>
                 {{/if}}
                 {{/with}}
+               
             </tr>
         
          {{/each}}   

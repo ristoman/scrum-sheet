@@ -7,7 +7,28 @@
 
 <div class="container-fluid">
 	<div class="row-fluid">
-	    <div class="span1">	<div>{{loginButtons}}</div></div>
+	    <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="#">ScrumSheet</a>
+              <div class="nav-collapse">
+                <ul class="nav">
+                  <li><a href="/reports/All"><i class="icon-home icon-white"></i> Home</a></li>
+                  <li><a href="/reports/Tech">Tech</a></li>
+                  <li><a href="/reports/Marketing">Marketing</a></li>
+                  <li><a href="/reports/Corporate">Corporate</a></li>
+                  <li>{{loginButtons}}</li>
+                </ul>
+              </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+	    <div class="span1">	<div></div></div>
 		<div class="span11">
 			<div class="row-fluid">
 				<div class="span12">

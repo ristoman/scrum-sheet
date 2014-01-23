@@ -1,9 +1,11 @@
 <template name="edit_user">
-    adsfaf
-
+    edit user
+    {{> editUserForm }}
 </template>
 
-
+<template name="editUserForm">
+    {{quickForm schema=UsersForm type="update"  buttonClasses="btn" buttonContent="Update" doc=selectedUser fields="username, email , profile.team, profile.authorised"}}
+</template>
 
 <template name="customUserListHeaders">
 </template>

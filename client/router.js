@@ -5,6 +5,10 @@ Meteor.Router.add({
 	},
 	
 	'/reports/create': 'create_report',
+	'/reports/:team': function(team) {
+		Session.set("selectedTeam", team);
+		return 'reports';
+	},
 	'/report/:id': function(id) {
 		Session.set('currentReportId', id);
 		console.log(id);
@@ -27,8 +31,11 @@ Meteor.Router.add({
 	'/remind/:id': function(id) {
 		Session.set('userRemindId', id);
 		return 'remind';
-	}
- 		
+	},
+	'/profile/:id': function(id) {
+		Session.set('userProfileId', id);
+		return 'edit_user';
+	}	
 });
 
 
