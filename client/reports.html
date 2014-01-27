@@ -31,8 +31,8 @@
                 <td>{{ emails.0.address }}</td>
                 <td><a href="/userhistory/{{_id}}">History</a></td>
                 {{#with todays_report this}}
-                <td><pre>{{ working_on}}</pre></td>
-                <td><pre>{{blockers}}</pre></td> 
+                <td><pre>{{{ working_on}}}</pre></td>
+                <td>><pre>{{{ blockers }}}</pre></td> 
                 {{#if isme }}         
                 <td><a href="/report/{{_id}}/edit">Edit</a></td>
                 {{/if}}

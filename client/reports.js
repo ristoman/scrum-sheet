@@ -19,6 +19,13 @@ Template.reports.when = function()  {
 	return  this.when.toDateString(); 
 };
 
+Template.reports.working_on = function() {
+	return this.working_on.autoLink();
+};
+
+Template.reports.blockers = function() {
+	return this.blockers.autoLink();
+};
 // Template.reports.who = function() {
 // 	console.log(this);
 // 	return this;
