@@ -1,6 +1,7 @@
 Meteor.Router.add({
 	'/': function () {
 	  console.log('loading ');
+	  Session.set("selectedTeam", "All");
 	  return 'reports';
 	},
 	
@@ -35,7 +36,8 @@ Meteor.Router.add({
 	'/profile/:id': function(id) {
 		Session.set('userProfileId', id);
 		return 'edit_user';
-	}	
+	},
+	'/admin': 'adminusers'
 });
 
 

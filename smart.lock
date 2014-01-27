@@ -26,8 +26,8 @@
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.3.3",
-        "commit": "d5c99b1c0fe30778e683175ecb0dd36529e6271e"
+        "tag": "v0.3.4",
+        "commit": "23ab6f56f9d65eb46c152480a8d8097867a8bb38"
       },
       "router": {
         "git": "https://github.com/tmeasday/meteor-router.git",
@@ -41,8 +41,8 @@
       },
       "accounts-admin-ui": {
         "git": "https://github.com/kenyee/meteor-accounts-admin-ui.git",
-        "tag": "v1.0.4",
-        "commit": "b9f81a3077cca1c4b5785978ad2240cc4e902f24"
+        "tag": "v1.0.5",
+        "commit": "3af06986c6679a235126444eab37f1ed7c360f1f"
       },
       "paginated-subscription": {
         "git": "https://github.com/tmeasday/meteor-paginated-subscription.git",
@@ -61,8 +61,8 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.2.31",
-        "commit": "61a690523b0371cd35492df2fd1c85bfa59393ac"
+        "tag": "v0.2.32",
+        "commit": "c67bf1d25b847ff4330f95bbda891c5fad3fb15f"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
@@ -91,8 +91,8 @@
       },
       "roles": {
         "git": "https://github.com/alanning/meteor-roles.git",
-        "tag": "v1.0.6",
-        "commit": "f81cbf7c765a4ed7e16a580c288db6f10a90856b"
+        "tag": "v1.2.6",
+        "commit": "f2a9058281f8f2fe028767841d7445aadd6893cf"
       }
     }
   }
