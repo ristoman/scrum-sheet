@@ -84,7 +84,7 @@ Template.reports.helpers({
 		
 	},
 	when: function() {
-		return moment().format("ddd DDD MMM");
+		return moment().format("ddd Do MMM");
 	},
 	isme: function() {
 		return(Meteor.user().username == this.who);
