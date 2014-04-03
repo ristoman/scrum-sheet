@@ -14,12 +14,12 @@ Meteor.startup(function () {
 	
 	createUserAdminRoles();
 	
-	process.env.MAIL_URL = 'smtp://@gilbert.karliner.org:25';
+	process.env.MAIL_URL = 'localhost'; //replace this with your SMTP server
 	
 	console.log(Meteor.settings);
  });
 
-Accounts.config({ restrictCreationByEmailDomain: 'upptalk.com', sendVerificationEmail: true });
+Accounts.config({ restrictCreationByEmailDomain: 'localhost', sendVerificationEmail: true }); //replace localhost with your corporate domain
 
 
 // In your server code: define a method that the client can call

@@ -107,7 +107,7 @@ Template.reports.events(
 			console.log("EV:" ,event, this);
 			Meteor.call('sendEmail',
 			             this.emails[0].address,
-			             'mike@minus1.com',
+			             'localhost', // replace this with your email address
 			             'Daily Report Reminder',
 			            'Please submit a daily status report now');
 		}
